@@ -39,7 +39,7 @@ WORKDIR /tmp/wkhtmltopdf
 RUN git checkout tags/$WKHTMLTOX_VERSION
 
 # Apply patches
-RUN patch -i /tmp/patches/wkhtmltopdf-buildconfig.patch
+# RUN patch -i /tmp/patches/wkhtmltopdf-buildconfig.patch
 WORKDIR /tmp/wkhtmltopdf/qt
 RUN patch -p1 -i /tmp/patches/qt-musl.patch
 RUN patch -p1 -i /tmp/patches/qt-musl-iconv-no-bom.patch
